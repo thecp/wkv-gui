@@ -1,0 +1,14 @@
+{
+  "attr-no-duplication": true,
+  "attr-value-double-quotes": true,
+  "attr-unsafe-chars": true,
+  "doctype-first": false,
+  "id-class-ad-disabled": true,
+  "id-unique": true,
+  "inline-style-disabled": true,
+  "space-tab-mixed-disabled": "space2",
+  "style-disabled": true,
+  "tag-pair": true,
+  "tag-self-close": false,
+  "tagname-lowercase": true
+}

@@ -1,0 +1,35 @@
+<h1>Vereine</h1>
+
+<button type="button" class="pull-right btn btn-sm btn-primary">Verein Hinzufügen</button>
+
+<br /><br />
+<table class="table table-hover table-sm table-bordered table-striped">
+  <thead>
+    <tr>
+      <th>LV</th>
+      <th>Vereinsnr.</th>
+      <th>Vereinsname</th>
+      <th>Kurzname</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let club of clubs;">
+      <td>{{club.regionalAssociation}}</td>
+      <td>{{club.number}}</td>
+      <td>{{club.name}}</td>
+      <td>{{club.shortName}}</td>
+      <td>
+        <div class="btn-group">
+          <button type="button" class="btn btn-sm btn-primary" (click)="edit(club)">
+            Bearbeiten
+          </button>
+          <button type="button" class="btn btn-sm btn-danger" (click)="delete(club)">
+            Löschen
+          </button>
+        </div>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
