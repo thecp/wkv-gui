@@ -1,7 +1,7 @@
 import { Routes, RouterModule }  from '@angular/router';
 
-import { ClubListComponent } from './club-list.component';
-import { ClubEditComponent } from './club-edit.component';
+import { AthleteListComponent } from './athlete-list.component';
+import { AthleteEditComponent } from './athlete-edit.component';
 
 const routes: Routes = [
   {
@@ -9,11 +9,11 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        component: ClubListComponent,
+        component: AthleteListComponent,
       },
       {
         path: 'edit/:id',
-        component: ClubEditComponent
+        component: AthleteEditComponent
       }
     ]
   }

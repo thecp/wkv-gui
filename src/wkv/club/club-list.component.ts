@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { ClubResource } from '../shared/resources/club.resource';
-import { Club } from '../../club/club.interface';
+import { Club } from './club.interface';
 
 @Component({
   selector: 'club-list',
@@ -10,7 +10,7 @@ import { Club } from '../../club/club.interface';
   providers: [ClubResource]
 })
 export class ClubListComponent implements OnInit {
-  clubs = [];
+  clubs: Club[];
 
   constructor(private clubResource: ClubResource,
               private router: Router,

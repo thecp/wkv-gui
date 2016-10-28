@@ -41,6 +41,7 @@ export class ClubEditComponent {
   }
 
   save(club: Club) {
+    // TODO Object.assgn to make use id not in Form?
     this.clubResource.save(club).subscribe(this.updateForm.bind(this));
   }
 }

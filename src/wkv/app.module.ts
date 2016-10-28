@@ -18,28 +18,32 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 
 import { HTTP_INTERCEPTOR } from './shared/http.service';
-import { MeetingService } from './shared/meeting.service';
+import {
+  MeetingService,
+  CompetitionTypeService,
+  AgeClassService,
+  DisciplineService
+} from './shared';
 import { LoginComponent } from './login';
 import { MainComponent } from './main';
 import { HomeComponent } from './home';
-import { ClubListComponent, ClubEditComponent, ClubFormComponent } from './club';
 
 // Application wide providers
 const APP_PROVIDERS = [
   ...APP_RESOLVER_PROVIDERS,
   AppState,
-  MeetingService
+  MeetingService,
+  CompetitionTypeService,
+  AgeClassService,
+  DisciplineService
 ];
 
-// TODO more modularisation
+// Pipes not working here for lazy loaded modules, import SharedModule instead
 const DECLARATIONS = [
   AppComponent,
   LoginComponent,
   MainComponent,
-  HomeComponent,
-  ClubListComponent,
-  ClubEditComponent,
-  ClubFormComponent
+  HomeComponent
 ];
 
 type StoreType = {
@@ -106,6 +110,4 @@ export class AppModule {
     store.disposeOldHosts();
     delete store.disposeOldHosts;
   }
-
 }
-

@@ -1,0 +1,19 @@
+<h1>Wettkampflisten</h1>
+<competition-list-selector 
+  (onSelection)="initCompetitionList($event)"
+  (onReset)="resetCompetitionList($event)">
+</competition-list-selector>
+<!--<competition-list-options></competition-list-options>-->
+<div class="row">
+  <div class="col-sm-6">
+    <competition-list-participants
+      [athletes]="availableAthletes">
+    </competition-list-participants>
+  </div>
+  <div class="col-sm-6">
+    <competition-list-participants-set
+      [list]="competitionList"
+      [athletes]="athletes">
+    </competition-list-participants-set>
+  </div>
+</div>

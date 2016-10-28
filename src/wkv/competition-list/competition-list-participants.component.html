@@ -1,0 +1,18 @@
+<table class="table table-sm table-border table-hover">
+  <thead>
+    <tr>
+      <th></th>
+      <th>St.Nr.</th>
+      <th>Name</th>
+      <th>Verein</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let athlete of athletes" (click)="select(athlete)">
+      <td><input type="checkbox" [(ngModel)]="athlete.selected"></td>
+      <td>{{athlete.stno}}</td>
+      <td>{{athlete.forename}} {{athlete.surname}}</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,9 @@
+<form [formGroup]="addCompetitionForm" (ngSubmit)="submit()">
+  <select multiple formControlName="ageClasses">
+    <option *ngFor="let ageClass of ageClasses" [value]="ageClass.id">{{ageClass.name}}</option>
+  </select>
+  <select multiple formControlName="disciplines">
+    <option *ngFor="let discipline of disciplines" [value]="discipline.id">{{discipline.name}}</option>
+  </select>
+  <button type="submit">Hinzufügen</button>
+</form>

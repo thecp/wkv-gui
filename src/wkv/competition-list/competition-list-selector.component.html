@@ -1,0 +1,24 @@
+WK-Nr.:
+<input type="number"
+       #competitionNrElem
+       (blur)="findCompetitionByNr(competitionNrElem.value, $event)"
+       (keypress)="triggerFindCompetitionByNr($event, competitionNrElem.value)"
+       [value]="competitionNr">
+<br>
+AK:
+<select #ageClassElem [value]="ageClass" (change)="changeAgeClass(ageClassElem.value)">
+  <option value="all">Alle</option>
+  <option *ngFor="let ageClass of availableAgeClasses" [value]="ageClass.id">{{ageClass.name}}</option>
+</select>
+Wettkämpfe:
+<select #competitionIdElem [value]="competitionId" (change)="changeCompetition(competitionIdElem.value)">
+  <option value="none"></option>
+  <option *ngFor="let competition of selectableCompetitions" [value]="competition.id">
+    {{competition.discipline | discipline}} {{competition.ageClass | ageClass}}
+  </option>  
+</select>
+Type:
+<select #competitionTypeElem [value]="competitionType" (change)="changeCompetitionType(competitionTypeElem.value)">
+  <option value="none"></option>
+  <option *ngFor="let type of competitionTypeOptions" [value]="type.id">{{type.name}}</option>  
+</select>

@@ -14,6 +14,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ForkCheckerPlugin = require('awesome-typescript-loader').ForkCheckerPlugin;
 const HtmlElementsPlugin = require('./html-elements-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
+const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin'); 
 
 /*
@@ -312,6 +313,15 @@ module.exports = function(options) {
        */
       new HtmlElementsPlugin({
         headTags: require('./head-config.common')
+      }),
+
+      // jQuery stuff
+      new ProvidePlugin({
+          jQuery: 'jquery',
+          $: 'jquery',
+          jquery: 'jquery',
+          "Tether": 'tether',
+          "window.Tether": "tether"
       }),
 
     ],

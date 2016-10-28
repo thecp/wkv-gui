@@ -1,0 +1,18 @@
+<table class="table table-sm table-hover table-border table-striped">
+  <thead>
+    <tr>
+      <td *ngFor="let listHeader of listHeaders">{{listHeader}}</td>
+    </tr>
+  </thead>
+  <tbody *ngFor="let group of list">
+    <tr><td>{{group.group}}</td></tr>
+    <tr *ngFor="let participant of group.participants;"
+        (click)="select(participant)">
+      <td><input type="checkbox" [value]="participant.selected"></td>
+      <td>{{participant.position}}</td>
+      <td>{{athlete.stno}}</td>
+      <td>{{athlete.forename}} {{athlete.surname}}</td>
+      <td></td>    
+    </tr>
+  </tbody>
+</table>

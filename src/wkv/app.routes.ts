@@ -2,7 +2,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from './main';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
-import { ClubListComponent, ClubEditComponent } from './club';
 
 import { DataResolver } from './app.resolver';
 
@@ -21,16 +20,19 @@ export const ROUTES: Routes = [
       },
       {
         path: 'club',
-        children: [
-          {
-            path: '',
-            component: ClubListComponent,
-          },
-          {
-            path: 'edit/:id',
-            component: ClubEditComponent
-          }
-        ]
+        loadChildren: () => System.import('./club/club.module')
+      },
+      {
+        path: 'athlete',
+        loadChildren: () => System.import('./athlete/athlete.module')
+      },
+      {
+        path: 'competition',
+        loadChildren: () => System.import('./competition/competition.module')
+      },
+      {
+        path: 'competition-list',
+        loadChildren: () => System.import('./competition-list/competition-list.module')
       },
       {
         path: '**',

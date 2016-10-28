@@ -22,7 +22,7 @@ export class AppComponent {
   constructor(public appState: AppState) {}
 
   ngOnInit() {
-    console.log('Initial App State', this.appState.state);
+    // console.log('Initial App State', this.appState.state);
   }
 }
 

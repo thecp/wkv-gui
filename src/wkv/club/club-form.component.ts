@@ -16,7 +16,7 @@ export class ClubFormComponent {
   regionalAssociations: RegionalAssociation[];
 
   @Input() clubForm: FormGroup;
-  @Output() updateClub = new EventEmitter<Club>();
+  @Output() updateClub: EventEmitter<Club> = new EventEmitter<Club>();
 
   constructor(private regionalAssociationService: RegionalAssociationService) {}
 
